@@ -1,5 +1,5 @@
 # SICP_solutions
-Fang's implementations of SICP exercises
+Fang's implementations of Structure and Interpretation of Computer Programs exercises
 
 #### Date of embarkment:	
 12/4/18 
@@ -19,4 +19,5 @@ Chapter | Start Date  |  Finish Date
 2 | 12/4/18| 
 
   		
- 
+#### Good reference materials
+https://www.cs.cmu.edu/Groups/AI/html/r4rs/r4rs_toc.html 
