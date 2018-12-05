@@ -15,6 +15,7 @@
   (let ((p1 (start-segment seg)) (p2 (end-segment seg)) (get-mid (lambda (x y) (/ (+ x y) 2))))
   (make-point (get-mid (x-point p1)(x-point p2)) (get-mid (y-point p1)(y-point p2)))))
 
+(provide (all-defined-out)) ; so that everything defined here can be accessed by other files requiring it
 
 ;; tests
 (define seg1 (make-segment 1.0 0.0 2.0 3.0))

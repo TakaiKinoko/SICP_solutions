@@ -1,5 +1,4 @@
 #lang scheme
-
 (require racket/include)
 (require "2_2.scm") ; where the line-segment is defined
 
@@ -28,18 +27,23 @@
 (equal? 14.0 (perimeter rec1))
 (equal? 12.0 (area rec1)) 
 
-;; level 1 (highest) -- implementation unchanged, names of the functions accommodating the new implementation of lower levels
+;; level 1 (highest) -- implementation unchanged, names of the functions adjusted to accommodate the new implementation of lower levels
 
-(define (perimeter rec)
+(define (perimeter-alt rec)
   (* 2 (+ (length (bottom-edge-alt rec)) (length (left-edge-alt rec)))))
 
-(define (area rec)
+(define (area-alt rec)
   (* (length (bottom-edge-alt rec)) (length (left-edge-alt rec))))
 
 ;; redefining level 2
 (define (make-rectangle-alt low-left-pt top-right-pt) (cons low-left-pt top-right-pt)) ; rectangle defined as a pair of points
-(define (bottom-edge-alt rec) ())
+(define (bottom-edge-alt rec) (make-segment (x-point (low-left-pt rec)) (y-point (low-left-pt rec)) (x-point (top-right-pt rec)) (y-point (low-left-pt rec))))
+(define (left-edge-alt rec) (make-segment (x-point (low-left-pt rec)) (y-point (low-left-pt rec)) (x-point (low-left-pt rec)) (y-point (top-right-pt rec)))) 
+(define low-left-pt car)
+(define top-right-pt cdr)
 
-(define (left-edge-alt rec))
-
+;; tests
+(define rec2 (make-rectangle-alt (make-point 1.0 0.0) (make-point 5.0 3.0)))
+(equal? 14.0 (perimeter-alt rec2))
+(equal? 12.0 (area-alt rec2)) 
 
