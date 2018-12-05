@@ -1,5 +1,7 @@
 #lang scheme
 
+;;2.1.1
+
 (define x (cons 1 2));;
 
 (define (make-rat n d) (cons n d))
@@ -53,4 +55,29 @@
 
 (print-rat (mul-rat one-half one-third))
 (print-rat (div-rat one-third one-half))
+
+
+
+;; 2.1.3
+;; implement cons, car, cdr w/o using any data structures at all but only using procedures
+
+; using lambda here rather than the named function dispatch in the book. I think it's less confusing this way
+(define (cons-alt x y)
+  (lambda (m)
+    (cond ((= m 0) x)
+          ((= m 1) y)
+          (else (error "Argument not 0 or 1 --  CONS" m)))))      ; the result of (cons-alt x y) itself is a function that takes in an integer argument
+
+(define (car-alt z) (z 0))
+(define (cdr-alt z) (z 1))
+
+;; validation:
+(define z (cons-alt 10 20))
+(newline)
+(display (car-alt z))
+(newline)
+(display (cdr-alt z))
+
+
+
 
