@@ -15,7 +15,7 @@ DrRacket
 
 Chapter | Start Date  |  Finish Date
 --------| ----------- | ------------
-1 | | 
+1 | 12/5/18 | 
 2 | 12/4/18| 
 
   		
