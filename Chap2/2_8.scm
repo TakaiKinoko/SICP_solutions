@@ -15,3 +15,5 @@
 (define i3 (make-interval -9.0 -8.0)) ; sign - - 
 (define i4 (make-interval -0.5 1.0))  ; sign - +
 (sub-interval i3 i4)
+
+(provide (all-defined-out)) ; 
