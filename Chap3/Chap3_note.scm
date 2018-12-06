@@ -38,3 +38,17 @@
 
 (define W1 (make-withdraw 100))
 (define W2 (make-withdraw 100))
+
+;------------------- VERSION 4 ------------------
+; an account OBJECT that takes in one argument which specifies the initial balance, has three procedures -- withdraw, deposit and dispatch(like a public interface to this object)
+(define (make-account balance)
+  (define (withdraw amount)
+    (if (>= amount balance) "insufficient funds"
+        (begin (set! balance (- balance amount)) balance)))
+  (define (deposit amount)
+    (begin (set! balance (+ balance amount))))
+  (define (dispatch m)   ; the dispatch method itself is returned as the value that represents the bank-account object
+    (cond ((eq? m 'withdraw) withdraw)  ; message passing style
+          ((eq? m 'deposit) deposit)
+          (else (error "Unknown request -- MAKE-ACCOUNT" m))))
+  dispatch)
