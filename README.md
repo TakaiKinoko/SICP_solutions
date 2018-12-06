@@ -17,7 +17,7 @@ Chapter | Start Date  |  Finish Date
 --------| ----------- | ------------
 1 | 12/5/18 | 
 2 | 12/4/18| 
-
+3 | 12/5/18 | 
   		
 #### Good reference materials
 https://www.cs.cmu.edu/Groups/AI/html/r4rs/r4rs_toc.html 
