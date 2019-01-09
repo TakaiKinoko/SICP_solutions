@@ -1,5 +1,5 @@
 # SICP_solutions
-Fang's implementations of Structure and Interpretation of Computer Programs exercises
+My implementations of Structure and Interpretation of Computer Programs exercises
 
 #### Date of embarkment:	
 12/4/18 
